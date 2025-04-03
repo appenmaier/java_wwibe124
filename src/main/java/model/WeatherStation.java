@@ -3,6 +3,13 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Wetterstation
+ *
+ * @author Daniel Appenmaier
+ * @version 1.0
+ *
+ */
 public class WeatherStation {
 
    private final int id;
@@ -31,19 +38,6 @@ public class WeatherStation {
 
    public void addMeasurementValue(MeasurementValue measurementValue) {
       measurementValues.add(measurementValue);
-      // if (measurementValues[measurementValues.length - 1] != null) {
-      // MeasurementValue[] temp = new MeasurementValue[measurementValues.length + 2];
-      // for (int i = 0; i < measurementValues.length; i++) {
-      // temp[i] = measurementValues[i];
-      // }
-      // measurementValues = temp;
-      // }
-      // for (int i = 0; i < measurementValues.length; i++) {
-      // if (measurementValues[i] == null) {
-      // measurementValues[i] = measurementValue;
-      // return;
-      // }
-      // }
    }
 
 }

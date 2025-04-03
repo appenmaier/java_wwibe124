@@ -6,14 +6,16 @@ import model.MeasurementValue;
 import model.Sensor;
 import model.WeatherStation;
 
+/**
+ * Klausuraufgabe 1 (Wetterstation)
+ *
+ * @author Daniel Appenmaier
+ * @version 1.0
+ *
+ */
 public class X01_ExamTask01 {
 
    public static void main(String[] args) {
-      // Sensor sensor1 = new Sensor("Temperature", "°C");
-      // Sensor sensor2 = new Sensor("Temperatur", "°C");
-      // Sensor sensor3 = new Sensor("Temperatur", "Grad Celsius");
-      Sensor sensor4 = Sensor.TEMPERATURE;
-
       long now = System.currentTimeMillis();
       MeasurementValue value1 = new MeasurementValue(now, 16, Sensor.TEMPERATURE);
       MeasurementValue value2 = new MeasurementValue(now, 20, Sensor.HUMIDITY);
@@ -26,7 +28,7 @@ public class X01_ExamTask01 {
 
       List<MeasurementValue> values = station.getMeasurementValues();
       for (int i = 0; i < values.size(); i++) {
-         MeasurementValue value = values.get(i); // values[i];
+         MeasurementValue value = values.get(i);
          System.out.println(value.getValue());
       }
    }
