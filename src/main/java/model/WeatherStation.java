@@ -40,4 +40,21 @@ public class WeatherStation {
       measurementValues.add(measurementValue);
    }
 
+   public double getAverageValueBySensor(Sensor sensor, long start, long end) {
+      double averageValue = 0;
+      double total = 0;
+      int counter = 0;
+
+      for (MeasurementValue value : measurementValues) {
+         if (value.getSensor().equals(sensor) && value.getTimestamp() >= start
+               && value.getTimestamp() <= end) {
+            total += value.getValue();
+            counter++;
+         }
+      }
+
+      averageValue = total / counter;
+      return averageValue;
+   }
+
 }

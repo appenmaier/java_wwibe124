@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 /**
  * Messwert
  *
@@ -29,6 +31,33 @@ public class MeasurementValue {
 
    public Sensor getSensor() {
       return sensor;
+   }
+
+   @Override
+   public String toString() {
+      return "MeasurementValue [timestamp=" + timestamp + ", value=" + value + ", sensor=" + sensor
+            + "]";
+   }
+
+   @Override
+   public int hashCode() {
+      return Objects.hash(sensor, timestamp, value);
+   }
+
+   @Override
+   public boolean equals(Object obj) {
+      if (this == obj) {
+         return true;
+      }
+      if (obj == null) {
+         return false;
+      }
+      if (getClass() != obj.getClass()) {
+         return false;
+      }
+      MeasurementValue other = (MeasurementValue) obj;
+      return sensor == other.sensor && timestamp == other.timestamp
+            && Double.doubleToLongBits(value) == Double.doubleToLongBits(other.value);
    }
 
 }
