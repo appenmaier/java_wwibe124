@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Wetterstation
+ * Weather Station
  *
  * @author Daniel Appenmaier
  * @version 1.0

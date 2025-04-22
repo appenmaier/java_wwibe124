@@ -3,7 +3,7 @@ package model;
 import java.util.Objects;
 
 /**
- * Messwert
+ * Measurement Value
  *
  * @author Daniel Appenmaier
  * @version 1.0
