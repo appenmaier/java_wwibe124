@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 import model.Movie;
+import model.MovieByRatingDescendingComparator;
 
 /**
  * Comparators
@@ -38,10 +39,14 @@ public class D02_Comparators {
 
       Collections.sort(numbers);
       Collections.sort(names);
-      // Collections.sort(movies);
+      Collections.sort(movies);
 
       System.out.println(numbers);
       System.out.println(names);
+      System.out.println(movies);
+
+      Collections.sort(movies, new MovieByRatingDescendingComparator());
+      System.out.println(movies);
    }
 
 }
