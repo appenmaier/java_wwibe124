@@ -5,7 +5,8 @@ import java.util.Collections;
 import java.util.List;
 
 import model.Movie;
-import model.MovieByRatingDescendingComparator;
+import model.Movie.Genre;
+import model.Movie.MovieByRatingDescendingComparator;
 
 /**
  * Comparators
@@ -29,9 +30,9 @@ public class D02_Comparators {
       names.add("Peter");
       names.add("Lisa");
 
-      movies.add(new Movie("John Wick 4", "2023", 8.4));
-      movies.add(new Movie("Disaster Movie", "2008", 2.1));
-      movies.add(new Movie("Der Pate", "1972", 9.2));
+      movies.add(new Movie("John Wick 4", "2023", Genre.ACTION, 8.4, new ArrayList<>()));
+      movies.add(new Movie("Disaster Movie", "2008", Genre.COMEDY, 2.1, new ArrayList<>()));
+      movies.add(new Movie("Der Pate", "1972", Genre.DRAMA, 9.2, new ArrayList<>()));
 
       System.out.println(numbers);
       System.out.println(names);

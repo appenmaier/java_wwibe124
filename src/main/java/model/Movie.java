@@ -1,6 +1,9 @@
 package model;
 
-import java.util.Objects;
+import java.util.Comparator;
+import java.util.List;
+
+import lombok.Data;
 
 /**
  * Movie
@@ -9,61 +12,78 @@ import java.util.Objects;
  * @version 1.0
  *
  */
+@Data
 public class Movie implements Comparable<Movie> {
 
    private final String title;
    private final String publishingYear;
-   private final double rating;
-
-   public Movie(String title, String publishingYear, double averageRating) {
-      this.title = title;
-      this.publishingYear = publishingYear;
-      this.rating = averageRating;
-   }
-
-   public String getTitle() {
-      return title;
-   }
-
-   public String getPublishingYear() {
-      return publishingYear;
-   }
-
-   public double getRating() {
-      return rating;
-   }
-
-   @Override
-   public String toString() {
-      return "Movie [title=" + title + ", publishingYear=" + publishingYear + ", rating=" + rating
-            + "]";
-   }
-
-   @Override
-   public int hashCode() {
-      return Objects.hash(rating, publishingYear, title);
-   }
-
-   @Override
-   public boolean equals(Object obj) {
-      if (this == obj) {
-         return true;
-      }
-      if (obj == null) {
-         return false;
-      }
-      if (getClass() != obj.getClass()) {
-         return false;
-      }
-      Movie other = (Movie) obj;
-      return Double.doubleToLongBits(rating) == Double.doubleToLongBits(other.rating)
-            && Objects.equals(publishingYear, other.publishingYear)
-            && Objects.equals(title, other.title);
-   }
+   private final Genre genre;
+   private final double averageRating;
+   private final List<Rating> ratings;
 
    @Override
    public int compareTo(Movie otherMovie) {
       return title.compareTo(otherMovie.title);
+   }
+
+   /**
+    * Movie Rating
+    *
+    * @author Daniel Appenmaier
+    * @version 1.0
+    *
+    */
+   @Data
+   public class Rating {
+
+      private final String userName;
+      private final int rating;
+
+   }
+
+   /**
+    * Genre
+    *
+    * @author Daniel Appenmaier
+    * @version 1.0
+    *
+    */
+   public static enum Genre {
+      ACTION, THRILLER, DRAMA, COMEDY, SCIFI
+   }
+
+   /**
+    * MovieByRatingDescendingComparator
+    *
+    * @author Daniel Appenmaier
+    * @version 1.0
+    *
+    */
+   public static class MovieByRatingDescendingComparator implements Comparator<Movie> {
+
+      @Override
+      public int compare(Movie movie1, Movie movie2) {
+         /* Option A */
+         // double rating1 = movie1.getRating();
+         // double rating2 = movie2.getRating();
+         //
+         // if (rating1 > rating2) {
+         // return -1;
+         // } else if (rating1 < rating2) {
+         // return 1;
+         // } else {
+         // return 0;
+         // }
+
+         /* Option B */
+         // Double rating1 = movie1.getRating();
+         // Double rating2 = movie2.getRating();
+         // return rating2.compareTo(rating1);
+
+         /* Option C */
+         return Double.compare(movie2.getAverageRating(), movie1.getAverageRating());
+      }
+
    }
 
 }
