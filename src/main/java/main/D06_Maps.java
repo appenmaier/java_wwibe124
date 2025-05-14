@@ -23,7 +23,8 @@ public class D06_Maps {
       /* Werte setze */
       studentsWithExam.put(new Student("1", "Hans"), new Exam("Mathe", 3.5));
       studentsWithExam.put(new Student("2", "Lisa"), new Exam("Mathe", 1.7));
-      studentsWithExam.put(new Student("3", "Max"), new Exam("Mathe", 2.5));
+      studentsWithExam.put(new Student("3", "Max"), null);
+      studentsWithExam.putIfAbsent(new Student("3", "Max"), new Exam("Mathe", 2.5));
 
       /* Werte lesen */
       System.out.println("Max: " + studentsWithExam.get(new Student("3", "Max")));
@@ -67,8 +68,10 @@ public class D06_Maps {
       System.out.println("Ergebnisse der Matheklausur:");
       for (Entry<Student, Exam> entry : studentsWithExam.entrySet()) {
          Student student = entry.getKey();
-         Exam exam = entry.getValue();
-         System.out.println(student.id() + ": " + exam.getGrade());
+         Exam oldExam = entry.getValue();
+         Exam newExam = new Exam(oldExam.getLecture(), oldExam.getGrade() - 0.1);
+         entry.setValue(newExam);
+         System.out.println(student.id() + ": " + newExam.getGrade() + " - " + oldExam.getGrade());
       }
       System.out.println();
 
@@ -79,6 +82,12 @@ public class D06_Maps {
       System.out.println(studentsWithExam);
 
       System.out.println(studentsWithExam.get(new Student("1", "Hans")));
+      System.out.println();
+
+      /* ForEach-Methode */
+      System.out.println("Ergebnisse der Matheklausur:");
+      studentsWithExam
+            .forEach((student, exam) -> System.out.println(student.id() + ": " + exam.getGrade()));
    }
 
 }
