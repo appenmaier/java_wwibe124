@@ -6,9 +6,9 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
 
-import model.Movie;
-import model.Movie.Genre;
-import model.Movie.MovieByRatingDescendingComparator;
+import model.MovieOld;
+import model.MovieOld.Genre;
+import model.MovieOld.MovieByRatingDescendingComparator;
 
 /**
  * Inner Classes
@@ -20,35 +20,35 @@ import model.Movie.MovieByRatingDescendingComparator;
 public class D05_InnerClasses {
 
    public static void main(String[] args) {
-      List<Movie> movies = new ArrayList<>();
+      List<MovieOld> movies = new ArrayList<>();
 
-      movies.add(new Movie("John Wick 4", "2023", Genre.ACTION, 8.4, new ArrayList<>()));
-      movies.add(new Movie("Disaster Movie", "2008", Genre.COMEDY, 2.1, new ArrayList<>()));
-      movies.add(new Movie("Der Pate", "1972", Genre.DRAMA, 9.2, new ArrayList<>()));
+      movies.add(new MovieOld("John Wick 4", "2023", Genre.ACTION, 8.4, new ArrayList<>()));
+      movies.add(new MovieOld("Disaster Movie", "2008", Genre.COMEDY, 2.1, new ArrayList<>()));
+      movies.add(new MovieOld("Der Pate", "1972", Genre.DRAMA, 9.2, new ArrayList<>()));
 
       /* Outer Class */
       Collections.sort(movies, new MovieByRatingDescendingComparator());
       System.out.println("Outer Class (Rating DESC)");
-      for (Movie m : movies) {
+      for (MovieOld m : movies) {
          System.out.println(m);
       }
       System.out.println();
 
       /* Local Class */
-      class MovieByRatingAscendingComparator implements Comparator<Movie> {
+      class MovieByRatingAscendingComparator implements Comparator<MovieOld> {
 
          @Override
-         public int compare(Movie movie1, Movie movie2) {
+         public int compare(MovieOld movie1, MovieOld movie2) {
             return Double.compare(movie1.getAverageRating(), movie2.getAverageRating());
          }
 
       }
       Collections.sort(movies, new MovieByRatingAscendingComparator());
       System.out.println("Local Class (Rating ASC)");
-      class MoviePrinterConsumer implements Consumer<Movie> {
+      class MoviePrinterConsumer implements Consumer<MovieOld> {
 
          @Override
-         public void accept(Movie movie) {
+         public void accept(MovieOld movie) {
             System.out.println(movie);
          }
 
@@ -60,7 +60,7 @@ public class D05_InnerClasses {
       Collections.sort(movies, new Comparator<>() {
 
          @Override
-         public int compare(Movie movie1, Movie movie2) {
+         public int compare(MovieOld movie1, MovieOld movie2) {
             return movie2.getTitle().compareTo(movie1.getTitle());
          }
 
@@ -69,7 +69,7 @@ public class D05_InnerClasses {
       movies.forEach(new Consumer<>() {
 
          @Override
-         public void accept(Movie movie) {
+         public void accept(MovieOld movie) {
             System.out.println(movie);
          }
 

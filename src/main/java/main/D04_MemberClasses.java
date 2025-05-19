@@ -2,9 +2,9 @@ package main;
 
 import java.util.ArrayList;
 
-import model.Movie;
-import model.Movie.Genre;
-import model.Movie.Rating;
+import model.MovieOld;
+import model.MovieOld.Genre;
+import model.MovieOld.Rating;
 
 /**
  * Member Classes
@@ -16,7 +16,7 @@ import model.Movie.Rating;
 public class D04_MemberClasses {
 
    public static void main(String[] args) {
-      Movie movie = new Movie("John Wick 4", "2023", Genre.ACTION, 8.4, new ArrayList<>());
+      MovieOld movie = new MovieOld("John Wick 4", "2023", Genre.ACTION, 8.4, new ArrayList<>());
       Rating rating = movie.new Rating("Daniel", 8);
       movie.getRatings().add(rating);
       System.out.println(movie);
