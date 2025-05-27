@@ -4,13 +4,13 @@ Dieses Repo beinhaltet alle Demos des Kurses WWIBE124 zur Vorlesung [Programmier
 
 ## Skript Programmierung II
 
-- [Vorlesung 1 (2. April 2025)](skript/lecture01.md)
-- [Vorlesung 2 (10. April 2025)](skript/lecture02.md)
-- [Vorlesung 3 (22. April 2025)](skript/lecture03.md)
-- [Vorlesung 4 (24. April 2025)](skript/lecture04.md)
-- [Vorlesung 5 (30. April 2025)](skript/lecture05.md)
-- [Vorlesung 6 (8. Mai 2025)](skript/lecture06.md)
-- [Vorlesung 7 (14. Mai 2025)](skript/lecture07.md)
-- [Vorlesung 8 (19. Mai 2025)](skript/lecture08.md)
-- [Vorlesung 9 (22. Mai 2025)](skript/lecture09.md)
-- [Vorlesung 10 (5. Juni 2025)](skript/lecture10.md)
+- [Vorlesung 1, 2. April 2025: Wiederholung Programmierung I](skript/lecture01.md)
+- [Vorlesung 2, 10. April 2025: Wiederholung Programmierung I](skript/lecture02.md)
+- [Vorlesung 3, 22. April 2025: Wiederholung Programmierung I, Komparatoren](skript/lecture03.md)
+- [Vorlesung 4, 24. April 2025: Datenklassen (Records), Maven, Lombok](skript/lecture04.md)
+- [Vorlesung 5, 30. April 2025: Innere Klassen (Inner Classes), Lambda-Ausdrücke (Lambdas)](skript/lecture05.md)
+- [Vorlesung 6, 8. Mai 2025: Schlüsseltransformationen (Hashing), Bäume, Assoziativspeicher (Maps)](skript/lecture06.md)
+- [Vorlesung 7, 14. Mai 2025: Optionals, Die Java Stream API](skript/lecture07.md)
+- [Vorlesung 8, 19. Mai 2025: Wiederholung Vorlesung 3 - 7, Die Java Stream API](skript/lecture08.md)
+- [Vorlesung 9, 22. Mai 2025: Die Java Stream API, Softwaretests, Komponententests (Unit Tests)](skript/lecture09.md)
+- [Vorlesung 10, 5. Juni 2025: Komponententests (Unit Tests), Mockito](skript/lecture10.md)
