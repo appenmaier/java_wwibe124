@@ -80,7 +80,7 @@ public class ShopTest {
       when(fastFood1.compareTo(fastFood2)).thenReturn(-1);
       when(fastFood1.compareTo(fastFood3)).thenReturn(-1);
       when(fastFood2.compareTo(fastFood1)).thenReturn(1);
-      when(fastFood2.compareTo(fastFood1)).thenReturn(1);
+      when(fastFood2.compareTo(fastFood3)).thenReturn(1);
       when(fastFood3.compareTo(fastFood1)).thenReturn(1);
       when(fastFood3.compareTo(fastFood2)).thenReturn(-1);
 

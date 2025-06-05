@@ -13,4 +13,4 @@ Dieses Repo beinhaltet alle Demos des Kurses WWIBE124 zur Vorlesung [Programmier
 - [Vorlesung 7, 14. Mai 2025: Optionals, Die Java Stream API](skript/lecture07.md)
 - [Vorlesung 8, 19. Mai 2025: Wiederholung Vorlesung 3 - 7, Die Java Stream API](skript/lecture08.md)
 - [Vorlesung 9, 22. Mai 2025: Die Java Stream API, Softwaretests, Komponententests (Unit Tests)](skript/lecture09.md)
-- [Vorlesung 10, 5. Juni 2025: Komponententests (Unit Tests), Mockito](skript/lecture10.md)
+- [Vorlesung 10, 5. Juni 2025: Komponententests (Unit Tests), Mockito, Wiederholung Vorlesung 8 - 10](skript/lecture10.md)
