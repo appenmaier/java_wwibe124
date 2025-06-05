@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,11 +21,47 @@ public record Crate(List<Body> bodies) {
    }
 
    public Optional<Body> getBodyWithHighestVolume() {
-      return null;
+      /* Variante A */
+      // Body bodyWithHighestVolume = null;
+      // double highestVolume = 0;
+      //
+      // for (Body b : bodies) {
+      // if (b.getVolume() > highestVolume) {
+      // highestVolume = b.getVolume();
+      // bodyWithHighestVolume = b;
+      // }
+      // }
+      //
+      // return Optional.ofNullable(bodyWithHighestVolume);
+
+      /* Variante B */
+      // Optional<Body> bodyWithHighestVolume = Optional.empty();
+      // double highestVolume = 0;
+      //
+      // for (Body b : bodies) {
+      // if (b.getVolume() > highestVolume) {
+      // highestVolume = b.getVolume();
+      // bodyWithHighestVolume = Optional.of(b);
+      // }
+      // }
+      //
+      // return bodyWithHighestVolume;
+
+      /* Variante C */
+      return bodies.stream()
+            .max((body1, body2) -> Double.compare(body1.getVolume(), body2.getVolume()));
    }
 
    public List<Sphere> getAllSpheres() {
-      return null;
+      List<Sphere> spheres = new ArrayList<>();
+
+      for (Body b : bodies) {
+         if (b instanceof Sphere s) {
+            spheres.add(s);
+         }
+      }
+
+      return spheres;
    }
 
 }
