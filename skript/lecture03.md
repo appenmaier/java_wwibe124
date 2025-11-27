@@ -1,4 +1,4 @@
-# Vorlesung 3 (22. April 2025)
+# Termin 3 (22. April 2025)
 
 ## Wiederholung Programmierung I
 

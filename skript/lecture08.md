@@ -1,4 +1,4 @@
-# Vorlesung 8 (19. Mai 2025)
+# Termin 8 (19. Mai 2025)
 
 ## Wiederholung Vorlesung 3 - 7
 
